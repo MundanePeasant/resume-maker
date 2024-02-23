@@ -15,7 +15,7 @@ function PersonalForm () {
                 <br />
                 <label htmlFor="address">City & Zip Code</label>
                 <input type="text" name="address" id="address" />
-                <button>Submit</button>
+                <button>Add Personal Info</button>
             </form>
         </div>
     )
