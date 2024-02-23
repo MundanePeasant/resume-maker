@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import PersonalForm from './components/PersonalForm'
 import './styles/App.css'
 
 function App() {
@@ -7,7 +8,8 @@ function App() {
     <>
       <div className='screen-container'>
         <div className='forms-container'>
-          //will house the forms
+          Header
+          <PersonalForm />
         </div>
         <div className='resume-container'>
           //will house the resume and update with the forms
