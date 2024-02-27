@@ -1,5 +1,7 @@
 @import url("./index.css");
 
-.personal-form {
+.personal-form,
+.education-form,
+.experience-form {
   background-color: var(--light-accent);
 }

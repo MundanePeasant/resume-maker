@@ -1,4 +1,4 @@
-import '../styles/PersonalForm.css'
+import '../styles/Form.css'
 
 function PersonalForm () {
     return (

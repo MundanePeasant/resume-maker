@@ -1,3 +1,5 @@
+import '../styles/Form.css'
+
 function ExperienceForm () {
     return (
         <div className="experience-form">

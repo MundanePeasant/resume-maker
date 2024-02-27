@@ -1,3 +1,5 @@
+import '../styles/Form.css'
+
 function EducationForm () {
     return (
         <div className="education-form">
