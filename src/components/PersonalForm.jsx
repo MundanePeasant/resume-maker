@@ -1,6 +1,6 @@
 import '../styles/Form.css'
 
-function PersonalForm () {
+function PersonalForm ({onClick}) {
     return (
         <div className="personal-form">
             <form action="">
@@ -11,11 +11,11 @@ function PersonalForm () {
                 <input type="email" id="email" name="email" required/>
                 <br />
                 <label htmlFor="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"/>
+                <input type="tel" id="phone" name="phone" />
                 <br />
                 <label htmlFor="address">City & Zip Code</label>
                 <input type="text" name="address" id="address" />
-                <button>Add Personal Info</button>
+                <button onClick={onClick}>Add Personal Info</button>
             </form>
         </div>
     )

@@ -17,7 +17,7 @@ function ExperienceForm () {
                 <label htmlFor="end-date">End Date: </label>
                 <input type="date" name="end-date" id="end-date" />
                 <br />
-                <label htmlFor="bullet">Bullets: </label>
+                <label htmlFor="bullets">Bullets: </label>
                 <textarea name="bullets" id="bullets" cols="30" rows="10"></textarea>
                 <button>Add bullet</button>
                 <br />

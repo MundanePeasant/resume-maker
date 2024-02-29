@@ -15,6 +15,7 @@
 .forms-container {
   background-color: var(--main-brand);
   max-width: 304px;
+  margin-right: 32px;
 }
 
 .resume-container {
