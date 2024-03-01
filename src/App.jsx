@@ -27,6 +27,9 @@ function App() {
       phone: document.getElementById("phone").value,
       address: document.getElementById("address").value
     })
+
+    const form = document.getElementsByClassName("personal-form")[0].firstChild;
+    form.reset();
   }
 
   //state for education
@@ -42,6 +45,9 @@ function App() {
     
     const education = new Education(school, location, study, start, end);
     setEdu(edu => [...edu, education])
+
+    const form = document.getElementsByClassName("education-form")[0].firstChild;
+    form.reset();
   }
 
   //state for experiences
@@ -63,6 +69,9 @@ function App() {
     const experience = new Experience(company, title, location, start, end, bulletArray)
 
     setExp(exp => [...exp, experience]);
+
+    const form = document.getElementsByClassName("experience-form")[0].firstChild;
+    form.reset();
   }
 
   return (
