@@ -5,7 +5,9 @@ import EducationForm from './components/EducationForm'
 import ExperienceForm from './components/ExperienceForm'
 import './styles/App.css'
 import Education from './components/Education'
+import Experience from './components/Experience'
 import EducationCV from './components/EducationCV'
+import ExperienceCV from './components/ExperienceCV'
 
 function App() {
   //state for the header section
@@ -33,13 +35,34 @@ function App() {
   function handleEducationClick (event) {
     event.preventDefault();
     const school = document.getElementById("school").value;
-    const location = document.getElementById("location").value;
+    const location = document.getElementById("location-edu").value;
     const study = document.getElementById("study").value;
     const start = document.getElementById("start-date-edu").value;
     const end = document.getElementById("end-date-edu").value;
     
     const education = new Education(school, location, study, start, end);
     setEdu(edu => [...edu, education])
+  }
+
+  //state for experiences
+  const [exp, setExp] = useState([]);
+
+  function handleExperienceClick (event) {
+    event.preventDefault();
+
+    //get all of the bullets which have been submitted
+    const company = document.getElementById("company").value;
+    const title = document.getElementById("title").value;
+    const location = document.getElementById("location-exp").value;
+    const start = document.getElementById("start-date-exp").value;
+    const end = document.getElementById("end-date-exp").value;
+    const bulletString = document.getElementById("bullets").value;
+
+    const bulletArray = bulletString.split('\n');
+
+    const experience = new Experience(company, title, location, start, end, bulletArray)
+
+    setExp(exp => [...exp, experience]);
   }
 
   return (
@@ -51,11 +74,12 @@ function App() {
           Education
           <EducationForm onClick={handleEducationClick}/>
           Experience
-          <ExperienceForm />
+          <ExperienceForm onClick={handleExperienceClick}/>
         </div>
         <div className='resume-container'>
           <PersonalCV header={header} />
           <EducationCV education={edu}/>
+          <ExperienceCV experience={exp}/>
         </div>
       </div>
     </>

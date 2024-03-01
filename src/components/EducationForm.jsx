@@ -7,8 +7,8 @@ function EducationForm ({onClick}) {
                 <label htmlFor="school">School: </label>
                 <input type="text" id="school" name="school" />
                 <br />
-                <label htmlFor="location">Location: </label>
-                <input type="text" id="location" name="location" />
+                <label htmlFor="location-edu">Location: </label>
+                <input type="text" id="location-edu" name="location-edu" />
                 <br />
                 <label htmlFor="study">Major: </label>
                 <input type="text" name="study" id="study" />
