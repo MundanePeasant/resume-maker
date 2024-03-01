@@ -20,5 +20,7 @@
 
 .resume-container {
   background-color: var(--light-primary);
+  min-width: 45%;
   max-width: 912px;
+  aspect-ratio: 8.5/11;
 }

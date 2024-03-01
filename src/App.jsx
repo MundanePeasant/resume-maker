@@ -7,10 +7,10 @@ import './styles/App.css'
 
 function App() {
   const [header, setHeader] = useState({
-    name: 'a',
-    email: 'b',
-    phone: '1',
-    address: '60657'
+    name: '',
+    email: '',
+    phone: '',
+    address: ''
   });
 
   function handlePersonalClick (event) {
