@@ -1,6 +1,6 @@
 import '../styles/Form.css'
 
-function EducationForm () {
+function EducationForm ({onClick}) {
     return (
         <div className="education-form">
             <form action="">
@@ -13,11 +13,11 @@ function EducationForm () {
                 <label htmlFor="study">Major: </label>
                 <input type="text" name="study" id="study" />
                 <br />
-                <label htmlFor="start-date">Start Date: </label>
-                <input type="date" name="start-date" id="start-date" />
-                <label htmlFor="end-date">End Date: </label>
-                <input type="date" name="end-date" id="end-date" />
-                <button>Add Education</button>
+                <label htmlFor="start-date-edu">Start Date: </label>
+                <input type="date" name="start-date-edu" id="start-date-edu" />
+                <label htmlFor="end-date-edu">End Date: </label>
+                <input type="date" name="end-date-edu" id="end-date-edu" />
+                <button onClick={onClick}>Add Education</button>
             </form>
         </div>
     );

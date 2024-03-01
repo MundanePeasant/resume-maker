@@ -4,8 +4,11 @@ import PersonalCV from './components/PersonalCV'
 import EducationForm from './components/EducationForm'
 import ExperienceForm from './components/ExperienceForm'
 import './styles/App.css'
+import Education from './components/Education'
+import EducationCV from './components/EducationCV'
 
 function App() {
+  //state for the header section
   const [header, setHeader] = useState({
     name: '',
     email: '',
@@ -15,7 +18,6 @@ function App() {
 
   function handlePersonalClick (event) {
     event.preventDefault();
-    console.log(event);
 
     setHeader({
       name: document.getElementById("name").value,
@@ -25,6 +27,21 @@ function App() {
     })
   }
 
+  //state for education
+  const [edu, setEdu] = useState([]);
+
+  function handleEducationClick (event) {
+    event.preventDefault();
+    const school = document.getElementById("school").value;
+    const location = document.getElementById("location").value;
+    const study = document.getElementById("study").value;
+    const start = document.getElementById("start-date-edu").value;
+    const end = document.getElementById("end-date-edu").value;
+    
+    const education = new Education(school, location, study, start, end);
+    setEdu(edu => [...edu, education])
+  }
+
   return (
     <>
       <div className='screen-container'>
@@ -32,12 +49,13 @@ function App() {
           Header
           <PersonalForm onClick={handlePersonalClick}/>
           Education
-          <EducationForm />
+          <EducationForm onClick={handleEducationClick}/>
           Experience
           <ExperienceForm />
         </div>
         <div className='resume-container'>
           <PersonalCV header={header} />
+          <EducationCV education={edu}/>
         </div>
       </div>
     </>

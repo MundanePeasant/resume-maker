@@ -1,8 +1,5 @@
 
-
 function PersonalCV (props) {
-    console.log(props);
-
     if(!props){
         return null;
     }

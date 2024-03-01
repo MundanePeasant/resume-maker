@@ -1,6 +1,6 @@
 import '../styles/Form.css'
 
-function ExperienceForm () {
+function ExperienceForm ({onClick}) {
     return (
         <div className="experience-form">
             <form action="">
@@ -12,16 +12,16 @@ function ExperienceForm () {
                 <br />
                 <label htmlFor="location">Location: </label>
                 <input type="text" name="location" id="location" />
-                <label htmlFor="start-date">Start Date: </label>
-                <input type="date" name="start-date" id="start-date" />
-                <label htmlFor="end-date">End Date: </label>
-                <input type="date" name="end-date" id="end-date" />
+                <label htmlFor="start-date-exp">Start Date: </label>
+                <input type="date" name="start-date-exp" id="start-date-exp" />
+                <label htmlFor="end-date-exp">End Date: </label>
+                <input type="date" name="end-date-exp" id="end-date-exp" />
                 <br />
                 <label htmlFor="bullets">Bullets: </label>
                 <textarea name="bullets" id="bullets" cols="30" rows="10"></textarea>
                 <button>Add bullet</button>
                 <br />
-                <button>Add Experience</button>
+                <button onClick={onClick}>Add Experience</button>
             </form>
         </div>
     );
