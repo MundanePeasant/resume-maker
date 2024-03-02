@@ -17,7 +17,6 @@ function App() {
     phone: '',
     address: ''
   });
-
   function handlePersonalClick (event) {
     event.preventDefault();
 
@@ -33,8 +32,8 @@ function App() {
   }
 
   //state for education
+  let replace = null;
   const [edu, setEdu] = useState([]);
-
   function handleEducationClick (event) {
     event.preventDefault();
     const school = document.getElementById("school").value;
@@ -44,15 +43,37 @@ function App() {
     const end = document.getElementById("end-date-edu").value;
     
     const education = new Education(school, location, study, start, end);
-    setEdu(edu => [...edu, education])
+
+    if(replace){
+      console.log("inside the if statement");
+      const index = edu.findIndex(obj => obj.id === replace.id);
+
+      const updatedEdu = [...edu.slice(0, index), education, ...edu.slice(index + 1)];
+
+      setEdu(updatedEdu);
+
+      replace = null;
+    } else {
+      setEdu(edu => [...edu, education])
+    }
 
     const form = document.getElementsByClassName("education-form")[0].firstChild;
     form.reset();
   }
 
+  //allowing for edits in Education section
+  function handleEducationEdit (eduObj) {
+    document.getElementById("school").value = eduObj.school;
+    document.getElementById("location-edu").value = eduObj.location;
+    document.getElementById("study").value = eduObj.study;
+    document.getElementById("start-date-edu").value = eduObj.startDate;
+    document.getElementById("end-date-edu").value = eduObj.endDate;
+
+    replace = eduObj;
+  }
+
   //state for experiences
   const [exp, setExp] = useState([]);
-
   function handleExperienceClick (event) {
     event.preventDefault();
 
@@ -87,7 +108,7 @@ function App() {
         </div>
         <div className='resume-container'>
           <PersonalCV header={header} />
-          <EducationCV education={edu}/>
+          <EducationCV education={edu} onClick={handleEducationEdit}/>
           <ExperienceCV experience={exp}/>
         </div>
       </div>

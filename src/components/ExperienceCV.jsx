@@ -11,6 +11,7 @@ function ExperienceCV(props) {
             <div>{exp.endDate}</div>
             <div>{exp.bullets.map(bullet => 
                 <div key={bullet}>{bullet}</div>)}</div>
+            <button>Edit</button>
         </div>)
 
     return (<>
